@@ -1,0 +1,51 @@
+Pequeña	P	Corrupta	C	Valor(Ataque)		V
+Normal	N	Maldita		M	Tenacidad(Magia)	T
+Grande	G	Pura		P	Lealtad(Defensa)	L
+DeHéroe	H
+
+Los items podrán llamarse, por ejemplo:
+
+-Pequeña alma corrupta de la Tenacidad.	(PCT)
+-Gran alma de la Lealtad. (GPL)
+-Alma corrupta del Valor. (NPV)
+-Alma de un Héroe Tenaz. (HPT)
+-Alma corrupta de un Héroe Leal. (HCL)
+-Alma maldita de un Héroe Valiente. (HMV)
+
+Las almas puras suman al atributo correspondiente, las corruptas suman al atributo correspondiente mientras restan a otro y las malditas restan al atributo correspondiente (esto no indica una categorización de los items, sólo es una guía para saber cómo se comportan los items de acuerdo a cómo los estamos llamando).
+
+
+
+clases:
+
+Personaje
+	HumanoGuerrero (implementa Humano y Guerrero)
+	HumanoLadrón (implementa Humano y Ladrón)
+	HumanoHechicero (implementa Humano y Hechicero)
+	OrcoGuerrero (implementa Orco y Guerrero)
+	...
+	ElfoHechicero (implementa Elfo y Hechicero)
+	PersonajeEquipado
+			ConPCT
+			ConGPL
+			...
+			ConNPV
+Obstaculo
+Mapa
+
+
+--------------------------------------------------
+interfaces:
+Humano
+Orco
+...
+Elfo
+Guerrero
+Ladrón
+...
+Hechicero
+Atacable
+Colisionable
+
+//////////////////////////////////////////////////
+COMENTARIOS:
