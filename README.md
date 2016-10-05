@@ -9,12 +9,12 @@
 
 ### Integrantes del equipo
 
-* Ana León Fuentes([AnaLeonFuentes](https://github.com/AnaLeonFuentes))
-* Ernesto Albarez([ernestoalbrz](https://github.com/ernestoalbrz))
-* Jennifer Bayarri([jenniferyb](https://github.com/jenniferyb))
-* Javier Benitez([CosasDeJavi](https://github.com/CosasDeJavi))
-* Pablo Struminger([pabloneto](https://github.com/pabloneto))
-* Daiana Gomez Nespola([daignespola](https://github.com/daignespola))
+* Ana León Fuentes ([AnaLeonFuentes](https://github.com/AnaLeonFuentes))
+* Ernesto Albarez ([ernestoalbrz](https://github.com/ernestoalbrz))
+* Jennifer Bayarri ([jenniferyb](https://github.com/jenniferyb))
+* Javier Benitez ([CosasDeJavi](https://github.com/CosasDeJavi))
+* Pablo Struminger ([pabloneto](https://github.com/pabloneto))
+* Daiana Gomez Nespola ([daignespola](https://github.com/daignespola))
 
 
 ## Sobre la tecnología
