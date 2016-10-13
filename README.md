@@ -1,4 +1,4 @@
-# [Nombre del juego]
+# Lord of Souls
 
 ## Sobre las personas
 
