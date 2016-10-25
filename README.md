@@ -1,5 +1,10 @@
 # Lord of Souls
 
+El día que decidí comenzar esta travesía, dejé toda mi vida anterior atrás, todo aquello que alguna vez conocí.
+Sin embargo, no esperaba encontrarme días después en un mundo completamente desconocido, plagado de critaruras a la espera de su próxima presa...  
+Son pocos los que no quieren aplastar mi cabeza y derramar mi sangre... pero no puedo confiar en ellos, se que ante la primer señal de debilidad estarán tras de mí...Lo sé porque yo haría lo mismo.  
+La única posibilidad de sobrevivir en estas tierras regadas con sangre es ganar tantas batallas como puedas, coleccionando las almas de tus contrincantes...y convertirte en el Lord of Souls.
+
 ## Sobre las personas
 
 ### Docentes del Taller
