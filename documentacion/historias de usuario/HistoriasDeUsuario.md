@@ -63,7 +63,7 @@ Dado un personaje cuando finalice una batalla con vida entonces su indicador de 
  **Criterio de Aceptación**  
  Dado un personaje y un item cuando el personaje agarre el nuevo item entonces el mismo es acumulado a los ya existentes como así también sus efectos. 
  
-## Historia de usuario 13.1 ###
+### Historia de usuario 13.1 ###
 *Como* personaje *quiero* no perder items *para* acumularlos.   
 **Criterio de Aceptación**  
 Dado un personaje y un item cuando el personaje agarre el nuevo item entonces los items agarrados previamente no deben ser desequipados.
