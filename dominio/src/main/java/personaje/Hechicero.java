@@ -34,7 +34,7 @@ private Map<String, Hechizo> hechizos = new HashMap<String, Hechizo>();
 		return this.hechizos.size();
 	}
 
-	public void hechizar(String conjuro, Atacable e) {
+	public boolean hechizar(String conjuro, Atacable e) {
 		
 		int aux=this.hechizos.get(conjuro).getGastaEnergia();
 		
@@ -46,7 +46,10 @@ private Map<String, Hechizo> hechizos = new HashMap<String, Hechizo>();
 		else
 		{
 			System.out.println("No se posee la magia necesaria para realizar el hechizo");
+			return false;
 		}
+		
+		return true;
 	}
 	
 	@Override

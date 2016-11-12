@@ -46,7 +46,7 @@ public abstract class PersonajeEquipado extends Personaje{
 		
 		return "nombrePersonaje=" + personajeDecorado.nombrePersonaje
 				+ "\nCaracteristicas [energia=" + personajeDecorado.energia 
-				+ ", fuerza=" + this.calcularPuntosDeAtaque() 
+				+ ", Ataque=" + this.calcularPuntosDeAtaque() 
 				+", salud=" + personajeDecorado.salud + "/" + personajeDecorado.saludTot 
 				+ ", agilidad=" + personajeDecorado.agilidad
 				+ ", defensa=" + this.obtenerPuntosDeDefensa() 

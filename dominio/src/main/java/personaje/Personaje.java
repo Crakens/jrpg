@@ -2,7 +2,7 @@ package personaje;
 
 import java.util.Scanner;
 
-public abstract class Personaje implements Atacable {
+public abstract class Personaje implements Atacable,Comparable < Personaje >  {
 	
 	protected String nombrePersonaje;
 	protected int fuerza;
@@ -215,7 +215,7 @@ public abstract class Personaje implements Atacable {
 	public String toString() {
 		return "nombrePersonaje=" + nombrePersonaje 
 				+ "\nCaracteristicas [energia=" + energia 
-				+ ", fuerza=" + calcularPuntosDeAtaque() 
+				+ ", Ataque=" + calcularPuntosDeAtaque() 
 				+", salud=" + salud + "/" + saludTot 
 				+ ", agilidad=" + agilidad
 				+ ", defensa=" + obtenerPuntosDeDefensa() 
@@ -343,5 +343,16 @@ public abstract class Personaje implements Atacable {
 	public int devolverExperiencia() {
 		
 		return experienciaAcum/2; //el matar un personaje t devuelve la mitad de su experiencia//
+	}
+	
+	public int compareTo(Personaje p) { 
+		
+		if(this.getAgilidad() > p.getAgilidad())
+				return -1;
+		
+		if(this.getAgilidad() < p.getAgilidad())
+				return 1;
+			
+		return 0;
 	}
 }
