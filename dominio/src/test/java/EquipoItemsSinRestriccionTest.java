@@ -11,6 +11,8 @@ import personaje.Humano;
 import personaje.Personaje;
 
 public class EquipoItemsSinRestriccionTest {
+	
+//### Historia de usuario 13 ###//## Historia de usuario 13.1 ###//
 @Test
 
 	public void equipoItemsSinRestriccion(){

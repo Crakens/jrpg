@@ -1,9 +1,7 @@
 package test;
 
-import junit.framework.Assert;
-
+import org.junit.Assert;
 import org.junit.Test;
-
 import personaje.Especialidad;
 import personaje.Guerrero;
 import personaje.Humano;
@@ -13,8 +11,8 @@ import enemigos.Goblin;
 
 public class RestablecerEnergiaTest {
 
+	//### Historia de usuario 12 ###//
 	@Test 
-	
 	public void restablecerEnergia(){
 		Personaje perso=new Humano();
 		Especialidad c=new Guerrero();

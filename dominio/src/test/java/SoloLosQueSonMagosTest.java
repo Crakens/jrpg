@@ -11,8 +11,8 @@ import personaje.Personaje;
 
 public class SoloLosQueSonMagosTest {
 
+	//### Historia de usuario 15 ###//
 	@Test
-	
 	public void soloLosQueSonMagos(){
 		Personaje perso=new Humano();
 		Especialidad c=new Guerrero();

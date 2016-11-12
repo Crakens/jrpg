@@ -14,6 +14,7 @@ import personaje.Personaje;
 
 public class ItemTest {
    
+	//### Historia de usuario 6 ###//
     @Test
     public void quePuedoAgregarItem() {
  

@@ -10,6 +10,7 @@ import personaje.Personaje;
 
 public class CrearPersonajeTest {
 
+	//### Historia de usuario 1 ###//
 	@Test
 	public void crearHumano() {
 		Personaje persHumano = new Humano();

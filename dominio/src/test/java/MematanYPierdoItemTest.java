@@ -1,9 +1,7 @@
 package test;
 
-import junit.framework.Assert;
-
+import org.junit.Assert;
 import org.junit.Test;
-
 import item.RegistroDeAlmas;
 import personaje.Especialidad;
 import personaje.Guerrero;
@@ -12,7 +10,10 @@ import personaje.Orco;
 import personaje.Personaje;
 
 public class MematanYPierdoItemTest {
-	@Test
+	
+	
+//### Historia de usuario 10 ###//
+@Test
 public void pierdeMejorItem() {
 		
 		boolean vive=true;

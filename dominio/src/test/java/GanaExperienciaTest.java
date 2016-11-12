@@ -13,6 +13,7 @@ import personaje.Personaje;
 
 public class GanaExperienciaTest {
 
+	//### Historia de usuario 3 ###//
 	@Test
 	public void ganarExperiencia(){
 		Personaje perso=new Humano();
@@ -34,6 +35,7 @@ public class GanaExperienciaTest {
 		
 	}
 	
+	//### Historia de usuario 4 ###//### Historia de usuario 5 ###//
 	@Test
 	public void subirDeNivel(){
 		Personaje pers=new Humano();

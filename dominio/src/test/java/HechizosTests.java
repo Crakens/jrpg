@@ -13,26 +13,8 @@ import personaje.Personaje;
 
 public class HechizosTests {
 
-	@Test
-	public void quePuedoHechizar() {
-		Personaje gimli = new Enano();
-		Assert.assertEquals(120, gimli.getAltura());
-		new Engorgio().afectar(gimli);
-		Assert.assertEquals(240, gimli.getAltura());
-	}
+	//### Historia de usuario 28 ###//
 	
-	@Test
-	public void quePuedoAgregarHechizos() {
-		Personaje gandalf = new Humano();
-        Especialidad casta= new Hechicero();
-        gandalf.setCasta(casta);
-        gandalf.bonificacionDeCasta();
-        
-		Assert.assertEquals(0, gandalf.getCasta().getHechicero().getCantidadDeHechizos());
-		gandalf.getCasta().getHechicero().agregarHechizo("engorgio", new Engorgio());
-		Assert.assertEquals(1, gandalf.getCasta().getHechicero().getCantidadDeHechizos());
-	}
-
 	@Test
 	public void queUnPersonajePuedeHechizarPorNombre() {
 		
@@ -46,6 +28,7 @@ public class HechizosTests {
 		Assert.assertEquals(120, gimli.getAltura());
 		gandalf.getCasta().getHechicero().hechizar("engorgio", gimli);
 		Assert.assertEquals(240, gimli.getAltura());
+		Assert.assertEquals(false, gandalf.getCasta().getHechicero().hechizar("engorgio", gimli));
 	}
 	
 }
