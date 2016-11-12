@@ -1,14 +1,13 @@
 package cs;
+
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.Socket;
 
-import partidaZR.Partida;
-import partidaZR.Posicion;
 import peticiones.CodigoPeticion;
 import peticiones.Peticion;
-import pojo.POJOPartidaConTablero;
+
 public class ServerTh extends Thread{
 	private Socket cSocket;
 	private DataInputStream in;
@@ -34,10 +33,10 @@ public class ServerTh extends Thread{
 		try {
 			in = new DataInputStream(cSocket.getInputStream());
 			out = new DataOutputStream(cSocket.getOutputStream());
-			//out.writeUTF("Bienvenido a Zombie Rush");
+		
 			while(true) {	
 				String entrada = in.readUTF();
-				System.out.println("CLIENTE: "+entrada);
+				//System.out.println("CLIENTE: "+entrada);
 				Peticion peticion = new Peticion(entrada, this);
 				String pojoRespuesta = peticion.getRespuesta();
 				int tipoRespuesta = esParaTodos(pojoRespuesta); 
@@ -64,7 +63,7 @@ public class ServerTh extends Thread{
 	}
 	
 	private int esParaTodos(String pojoRespuesta) {
-		String[] datos = pojoRespuesta.split(Peticion.CARACTER_SEPARACION);
+		/*String[] datos = pojoRespuesta.split(Peticion.CARACTER_SEPARACION);
 		try {
 			if(Integer.parseInt(datos[0]) == CodigoPeticion.VINO_MAPA_NUEVO){
 				String nombrePartida = datos[1];
@@ -73,7 +72,7 @@ public class ServerTh extends Thread{
 				return pos;
 			}			
 		} catch (Exception e) {
-		}
+		}*/
 		return -1;
 	}
 		
