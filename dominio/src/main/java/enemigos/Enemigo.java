@@ -1,9 +1,10 @@
 package enemigos;
 
 import personaje.Atacable;
+import personaje.Personaje;
 
 
-public abstract class Enemigo implements Atacable {
+public abstract class Enemigo implements Atacable, Comparable < Enemigo >{
 
 	protected String nombre;
 	protected int energiaTot;
@@ -77,5 +78,16 @@ public abstract class Enemigo implements Atacable {
 			this.energia = energiaTot;
 		else
 			this.energia+= recuperacion;
+	}
+	
+	public int compareTo(Enemigo e) { 
+		
+		if(this.getAgilidad() > e.getAgilidad())
+				return -1;
+		
+		if(this.getAgilidad() < e.getAgilidad())
+				return 1;
+			
+		return 0;
 	}
 }
