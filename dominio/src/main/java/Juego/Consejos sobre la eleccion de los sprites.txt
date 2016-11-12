@@ -1,0 +1,3 @@
+-Al elegir los sprites es conveniente tener encuenta los derechos de autor para no tener quilombos judiciales(muy importante recordarlo!)
+-En un momento habra que decidir el tamaño de los Sprites a utilizar(se recomienda que siempre sea en potencias de 2 para mayor velocidad a la hora de cargarlos al juego).
+-Medida a consejable. Para tener 100 Sprites en una hoja= 320 pixeles por 320 pixeles. Asi caben 100 exprites de 32 por 32 pixeles cada uno.
