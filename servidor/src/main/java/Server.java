@@ -1,78 +1,67 @@
-package cs;
+package principal.cs;
 
+import java.io.ObjectOutputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.sql.Connection;
-import java.util.ArrayList;
+import java.util.LinkedList;
 
+import javax.swing.JOptionPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
 import baseDeDatos.SQLiteConnection;
 
-public class Server {
-	static int PUERTO_POR_DEFECTO = 5000;
-	private ArrayList<UsuarioSocket> listaSocketsUsuarios;
+public class Server extends Thread{
+	static int PUERTO_POR_DEFECTO = 50000;
+	private LinkedList<ObjectOutputStream> listaUsuariosMapa1;
+	private LinkedList<ObjectOutputStream> listaUsuariosMapa2;
+	private ServerSocket svSocket;
 	private SQLiteConnection conexionBD;
 	
-	private JTextArea txtLog;
 
-	public JTextArea getTxtLog() {
-		return txtLog;
+	public LinkedList<ObjectOutputStream> getListaUsuariosMapa1() {
+		return listaUsuariosMapa1;
 	}
-
-	public ArrayList<UsuarioSocket> getListaSocketsUsuarios() {
-		return listaSocketsUsuarios;
+	
+	public LinkedList<ObjectOutputStream> getListaUsuariosMapa2() {
+		return listaUsuariosMapa2;
 	}
 	
 	public SQLiteConnection getConexionBD() {
 		return conexionBD;
 	}
 
-	public Server(JTextField txtPuerto, JTextArea txtLog) {
-		this.txtLog = txtLog;
-		PUERTO_POR_DEFECTO = Integer.parseInt(txtPuerto.getText());
-		conexionBD = new SQLiteConnection();
-		
-		listaSocketsUsuarios = new ArrayList<UsuarioSocket>();
-		
+	public Server() {
 		try {
-
-			ServerSocket svSocket = new ServerSocket(PUERTO_POR_DEFECTO);
-			// Escuchar a clientes de forma constante
-			while(true) {
-				//mostrarUsuariosConectados();
-				//System.out.println("Escuchando en el puerto: " + PUERTO_POR_DEFECTO);
-				escribirLog("Escuchando en el puerto: " + PUERTO_POR_DEFECTO);
-				// Aceptar la conexión
-				Socket cSocket = svSocket.accept();
-				escribirLog("Se conectó: " + cSocket.getLocalAddress());
-				UsuarioSocket aux = new UsuarioSocket(cSocket);
-				listaSocketsUsuarios.add(aux);
-				//ServerTh sThread = new ServerTh(cSocket, listaSocketsUsuarios, pojoPartidasEnLinea, conexionBD);
-				ServerTh sThread = new ServerTh(cSocket, this);
-				sThread.start();
-			}
+			svSocket = new ServerSocket(PUERTO_POR_DEFECTO);
 		} catch (Exception e) {
-			e.printStackTrace();
+			JOptionPane.showMessageDialog(null, "handle exception","Error en crear Server", JOptionPane. ERROR_MESSAGE);
+		}
+		conexionBD = new SQLiteConnection();
+		listaUsuariosMapa1 = new LinkedList<ObjectOutputStream>();
+		listaUsuariosMapa2 = new LinkedList<ObjectOutputStream>();
+	}
+
+	public void run(){	// esto queda corriendo atendiendo las conexiones nuevas y creando nuevos threads por c/u
+		Socket s = null;
+		while(true){
+			try {
+				s = this.svSocket.accept();
+			} catch (Exception e) {
+				JOptionPane.showMessageDialog(null, "Hubo un problema con la atención de un pedido de conexión","Error en run Server", JOptionPane. ERROR_MESSAGE);
+			}
+			new ServerThread(s,this).start();
 		}
 	}
 	
 
-
-	private void mostrarUsuariosConectados() {
-		escribirLog("-------------------Usuarios------------------------");
-		escribirLog("Lista de usuarios conectados:");
-		for (int i = 0; i < this.listaSocketsUsuarios.size(); i++) {
-			escribirLog((i+1)+": "+listaSocketsUsuarios.get(i));
-		}
-		escribirLog("---------------------------------------------------");
+	public static void main(String[] args) {
+		new Server().start();
 	}
 	
-	public void escribirLog (String cadena) {
-		this.txtLog.append(cadena+"\n");
+	public void agregarAListaDeMapa1(ObjectOutputStream oos){
+		this.listaUsuariosMapa1.add(oos);
 	}
-	
-
 }
 
